@@ -41,7 +41,7 @@
                         <thead>
                         <tr>
                             <!--th data-field="status" data-checkbox="true"></th-->
-                            <th data-field="isbn" data-sortable="true">ISBN</th>
+                            <th data-field="id" data-sortable="true">ISBN</th>
                             <th data-field="title" data-cell-style="cellStyle" data-sortable="true">Titulo</th>
                             <th data-field="pages" data-cell-style="cellStyle" data-sortable="true">Páginas</th>
                             <th data-field="description" data-sortable="true">Descripción</th>
@@ -377,7 +377,7 @@
                     success: function (data) {
 
                         if (data.errors) {
-                            showInputError(data.errors.isbn ? data.errors.name : null, '#error-isbn-create','#group-error-isbn-create');
+                            showInputError(data.errors.id ? data.errors.name : null, '#error-isbn-create','#group-error-isbn-create');
                             showInputError(data.errors.title ? data.errors.title : null, '#error-title-create','#group-error-title-create');
                             showInputError(data.errors.author_id ? data.errors.author_id : null, '#error-author_id-create','#group-error-author_id-create');
                             showInputError(data.errors.publisher_id ? data.errors.publisher_id : null, '#error-publisher_id-create','#group-error-publisher_id-create');

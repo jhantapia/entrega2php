@@ -27,6 +27,7 @@ class BooksController extends ControllerCrud
     }
     public function store(Request $request)
     {
+        //return response()->json($request);
         //dd($request->file('cover')->store('public/cover'));
         $rules = [
             'isbn' => 'required',
@@ -53,7 +54,7 @@ class BooksController extends ControllerCrud
             if ($request->hasFile('cover')) {
                 $book->label = $request->file('cover')->store('public/cover');
             }
-            $book->isbn = $request->isbn;
+            $book->id = $request->isbn;
             $book->title = $request->title;
             $book->pages = $request->pages;
             $book->publisher_id = $request->publisher_id;

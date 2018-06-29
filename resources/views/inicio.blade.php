@@ -276,13 +276,13 @@
                         <thead>
                         <tr>
                             <!--th data-field="status" data-checkbox="true"></th-->
-                            <th data-field="isbn" data-sortable="true">ISBN</th>
+                            <th data-field="id" data-sortable="true">ISBN</th>
                             <th data-field="title" data-cell-style="cellStyle" data-sortable="true">Titulo</th>
                             <th data-field="pages" data-cell-style="cellStyle" data-sortable="true">Páginas</th>
                             <th data-field="description" data-sortable="true">Descripción</th>
                             <th data-field="author" data-sortable="true">Autor</th>
-                            <th data-field="active" data-switchable="false" data-formatter="operateFormatterActive"  data-show-columns="false"></th>
-                            <th data-field="controls" data-cell-style="cellStyle" data-switchable="false" data-formatter="operateFormatterControls" data-show-columns="false"></th>
+                            <th data-field="active" data-switchable="false" data-formatter="operateFormatterActive"  data-show-columns="false">Estado</th>
+
                         </tr>
                         </thead>
                     </table>
@@ -776,6 +776,18 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> Todos
 
                 return '<span>' + day + '-' + month + '-' + date.getFullYear() + '</span><br>' +
                     '<span>' + hours + ':' + minutes + ':' + seconds + '</span>';
+            }
+
+            function operateFormatterActive(value, row, index){
+
+                var activeButton = '';
+
+                if(row.active == 1){
+                    return 'Disponible'
+                }else{
+                    return 'No Disponible'
+                }
+                //return ['<label class="switch"><input id="switch" type="checkbox" onclick="changeStatusToggle(' + row.id + ')" ' + activeButton + ' id="togBtn"><div class="slider round"><span class="on">Activado</span><span class="off">Desactivado</span></div></label>'].join('');
             }
         </script>
 
