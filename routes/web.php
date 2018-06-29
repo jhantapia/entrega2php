@@ -5,10 +5,11 @@ Route::get('/', function () {
     if (Auth::check()) {
         return redirect('/dashboard');
     }
-    return redirect('/login');
+    return redirect('/inicio');
 })->name('home');
 
 // login y asociados GUEST
+Route::get('/inicio', 'IndexController@index')->name('inicio');
 Route::get('/login', 'LoginController@showLogin')->name('login.show');
 Route::post('/login', 'LoginController@login')->name('login');
 Route::post('/logout', 'LoginController@logout')->name('logout');
@@ -16,6 +17,7 @@ Route::get('/login/send-password', 'LoginController@showSendPassword')->name('lo
 Route::post('/login/send-password', 'LoginController@sendPassword')->name('login.send-password');
 Route::get('/login/recovery-password', 'LoginController@showRecoveryPassword')->name('login.show-recovery-password');
 Route::post('/login/recovery-password', 'LoginController@recoveryPassword')->name('login.recovery-password');
+Route::get('/books', 'BooksController@getAll')->name('books.all-public');
 
 // todas las rutas al menos debes estar auntenficado
 Route::middleware('auth')->group(function () {

@@ -1,10 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Http\Controllers\CrudHelper\ControllerCrud;
+use App\Http\Controllers\CrudHelper\ControllerUtils;
+use Illuminate\Support\Facades\Validator;
 
 use Illuminate\Http\Request;
 
-class HomeController extends Controller
+class HomeController extends ControllerCrud
 {
     /**
      * Create a new controller instance.
@@ -23,6 +26,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        return view('inicio');
     }
+
+
 }
